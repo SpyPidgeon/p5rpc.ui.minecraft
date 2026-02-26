@@ -1,0 +1,1 @@
+Source code for my Persona 5 Royal PC Inventory Mod. As you read through the code, please keep in mind I'm almost entirely self-taught when it comes to C++. If you see things odd, that should explain why.
