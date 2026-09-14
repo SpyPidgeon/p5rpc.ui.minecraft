@@ -537,7 +537,20 @@ void ShowInventoryWindow()
 				windowDraw->AddRectFilled(rectMin, rectMax, ImColor(1.0f, 1.0f, 1.0f, 0.5f));
 			}
 
-			windowDraw->AddRect(rectMin, rectMax, ImColor(255, 255, 255), NULL, NULL, padding);
+			//windowDraw->AddRect(rectMin, rectMax, ImColor(255, 255, 255), NULL, NULL, padding);
+
+			int sizeX = rectMax.x - rectMin.x;
+			int sizeY = rectMax.y - rectMin.y;
+
+			ImVec2 vectors[] =
+			{
+				ImVec2(rectMin.x + sizeX / 2,rectMin.y),
+				ImVec2(rectMax.x,rectMin.y + sizeY / 2),
+				ImVec2(rectMin.x + sizeX / 2,rectMax.y),
+				ImVec2(rectMin.x, rectMin.y + sizeY / 2)
+			};
+
+			windowDraw->AddQuad(vectors[0], vectors[1], vectors[2], vectors[3], ImColor(255, 255, 255),padding);
 		}
 	}
 
